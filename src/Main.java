@@ -1,5 +1,6 @@
 //Importar la clase Estudiante
-import modelo.Estudiante;
+import modelo.EstudianteLicenciatura;
+import modelo.EstudiantePosgrado;
 
 public class Main {
 
@@ -7,49 +8,46 @@ public class Main {
     public static void main(String[] args) {
 
         //Crear objetos de tipo Estudiante
-        Estudiante estudiante1 = new Estudiante(
+        EstudianteLicenciatura estudianteLicenciatura =
+                new EstudianteLicenciatura(
                 "A001",
                 "Eufracio Tolentino",
                 "Ingenieria en Sistemas",
-                9.5
+                9.5,
+                        5,
+                        180
         );
-        Estudiante estudiante2 = new Estudiante(
-                "A002",
-                "Gisela Colemanres",
-                "Contaduria",
-                8.8
-        );
-        Estudiante estudiante3 = new Estudiante(
-                "A003",
-                "Roberto Palos",
-                "Administración",
-                9.2
+        EstudiantePosgrado estudiantePosgrado =
+                new EstudiantePosgrado(
+                "P001",
+                "Gisela Colmenares",
+                "Tecnoligías de la Información",
+                9.7,
+                        "Maestría",
+                        "Aplicacion de inteligencia artificial en la educación"
         );
 
         //Metodo que muestra la informacion inicial de los estudiantes
         System.out.println("===== SISTEMA DE GESTION DE ESTUDIANTES =====");
 
-        System.out.println("===== ESTUDIANTE 1 =====");
-        estudiante1.mostrarDatos();
-        System.out.println("===== ESTUDIANTE 2 =====");
-        estudiante2.mostrarDatos();
-        System.out.println("===== ESTUDIANTE 3 =====");
-        estudiante3.mostrarDatos();
+        System.out.println("===== ESTUDIANTE DE LICENCIATURA =====");
+        estudianteLicenciatura.mostrarDatos();
+        estudianteLicenciatura.mostrarAvanceAcademico();
+        System.out.println("===== ESTUDIANTE DE POSGRADO =====");
+        estudiantePosgrado.mostrarDatos();
+        estudiantePosgrado.mostrarInvestigacion();
         System.out.println("\n===== ACTUALIZANDO INFORMACION =====\n");
 
-        //Actualizar informacion
-        //Metodo que actualiza el promedio del estudiante
-        estudiante2.actualizarPromedio(9.6);
+        //Metodos heredados de la cale Estudiante
+        estudianteLicenciatura.actualizarPromedio(9.8);
         //Metodo que permite cambiar la carrera del estudiante
-        estudiante3.cambiarCarrera("Ingenieria Industrial");
+        estudiantePosgrado.cambiarCarrera("Ciencias Computacionales");
 
         //Mostrar informacion actualizada
-        System.out.println("===== ESTUDIANTE 2 (ACTUALIZADO) =====");
-        estudiante2.mostrarDatos();
+        System.out.println("\n===== LICENCIATURA ACTUALIZADA =====");
+        estudianteLicenciatura.mostrarDatos();
 
-        System.out.println();
-
-        System.out.println("===== ESTUDIANTE 3 (ACTUALIZADO) =====");
-        estudiante3.mostrarDatos();
+        System.out.println("\n===== POSGRADO ACTUALIZADO =====");
+        estudiantePosgrado.mostrarDatos();
     }
 }

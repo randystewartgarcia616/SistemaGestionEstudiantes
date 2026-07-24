@@ -17,7 +17,7 @@ public class Estudiante {
 
     // Metodo para mostrar la informacion del estudiante
     public void mostrarDatos () {
-        System.out.println("Martricula; " + matricula);
+        System.out.println("Martrícula: " + matricula);
         System.out.println("Nombre: " + nombre);
         System.out.println("Carrera: " + carrera);
         System.out.println("Promedio: " + promedio);
@@ -31,5 +31,19 @@ public class Estudiante {
     // Metodo que permite cambiar la carrera del estudiante
     public void cambiarCarrera(String nuevaCarrera) {
         carrera = nuevaCarrera;
+    }
+
+    //Metodos get para permitir que las clases hijas consulten la informacion
+    public String getMatricula() {
+        return matricula;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public String getCarrera() {
+        return carrera;
+    }
+    public double getPromedio() {
+        return promedio;
     }
 }
